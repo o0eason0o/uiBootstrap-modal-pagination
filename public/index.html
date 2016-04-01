@@ -1,0 +1,35 @@
+<!DOCTYPE hmtl>
+<html>
+<head>
+
+<title>l3</title>
+<link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.css">
+<link rel="stylesheet" href="libs/angular-bootstrap/ui-bootstrap-csp.css">
+<script src="libs/angular/angular.js"></script>
+<script src="libs/angular-bootstrap/ui-bootstrap.js"></script>
+<script src="libs/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+<script src="app.js"></script>
+</head>
+<body ng-app="app" ng-controller="InterviewCtrl">
+<div class="container"> 
+    <table class="table table-striped">
+        <tr>
+            <th>Client</th>
+            <th>Candidate</th>
+            <th>Type</th>
+            <th>Date</th>
+            <th>Action</th>
+        </tr>
+        <tr ng-repeat="interview in interviews | orderBy:'Date':true">
+            <td>{{interview.Client}}</td>
+            <td>{{interview.Candidate}}</td>
+            <td>{{interview.Type}}</td>
+            <td>{{interview.Date | date }}</td>
+            <td>
+                <button type="button" ng-click="showQuestions(interview)">Questions</button>
+            </td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,5 @@
+
+<ul>
+    <li ng-repeat="question in questions">{{question}}</li>
+</ul>
+<uib-pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()" items-per-page="itemsPerPage"></uib-pagination>
